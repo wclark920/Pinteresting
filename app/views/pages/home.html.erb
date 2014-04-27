@@ -1,4 +1,11 @@
 <div class="jumbotron center">
 <h1>My first rails app!!</h1>
-<p>Click here to <%= link_to 'sign up', '#', class: 'btn btn-success' %></p>
+
+	<% if user_signed_in? %>
+		# Do something
+	<% else %>
+		<p>Click here to <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success' %></p>
+		<p>Already a user? <%= link_to 'Log In', new_user_session_path, class: 'btn btn-primary' %></p>
+	<% end %>
+	
 </div>
